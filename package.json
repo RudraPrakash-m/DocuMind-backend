@@ -15,11 +15,14 @@
   },
   "dependencies": {
     "axios": "^1.16.1",
+    "cloudinary": "^1.41.3",
     "cookie-parser": "^1.4.7",
     "cookies-parser": "^1.2.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "multer": "^2.1.1",
+    "multer-storage-cloudinary": "^4.0.0",
     "urlencoder": "^0.1.0"
   }
 }
