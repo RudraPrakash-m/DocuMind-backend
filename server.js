@@ -6,6 +6,7 @@ const publicRouter = require("./routes/public/publicRoute");
 const adminRouter = require("./routes/admin/adminRoute");
 const userRouter = require("./routes/user/userRoute");
 const connectDB = require("./config/db/db");
+const { clerkMiddleware } = require("@clerk/express");
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookies());
+app.use(clerkMiddleware());
 
 const PORT = process.env.PORT || 8080;
 

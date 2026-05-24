@@ -18,6 +18,8 @@ const generateToken = (user) => {
 
 // Send Cookie
 const sendTokenCookie = (res, token) => {
+//   console.log("cookies set");
+
   res.cookie("token", token, {
     httpOnly: true,
 
