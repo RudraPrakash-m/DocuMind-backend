@@ -5,6 +5,7 @@ const { getAuth, clerkClient } = require("@clerk/express");
 const USER_MODEL = require("../../models/userModel");
 
 const { generateToken, sendTokenCookie } = require("../../utils/jwt.utils");
+const authentication = require("../../middlewares/authentication");
 
 const publicRouter = express.Router();
 

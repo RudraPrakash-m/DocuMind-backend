@@ -23,8 +23,8 @@ const storage = new CloudinaryStorage({
     const ext = path.extname(file.originalname).replace(".", "").toLowerCase();
 
     /*
-      Validate Extension
-    */
+        Validate Extension
+      */
 
     if (!allowedFormats.includes(ext)) {
       throw new Error("Only PDF and MD files are allowed");
@@ -33,11 +33,16 @@ const storage = new CloudinaryStorage({
     return {
       folder: "workspace_documents",
 
-      resource_type: "raw",
+      /*
+          IMPORTANT FIX
+        */
 
-      public_id: Date.now() + "-" + file.originalname.replace(/\s+/g, "-"),
+      resource_type: "auto",
 
-      format: ext,
+      public_id:
+        Date.now() +
+        "-" +
+        path.parse(file.originalname).name.replace(/\s+/g, "-"),
     };
   },
 });
