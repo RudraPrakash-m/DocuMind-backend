@@ -17,6 +17,8 @@ const uploadFile = asyncHandler(async (req, res) => {
     Save Into MongoDB
   */
 
+  console.log(req.user);
+
   const newDocument = await DOCUMENT_MODEL.create({
     title: req.body.title,
 
@@ -30,7 +32,7 @@ const uploadFile = asyncHandler(async (req, res) => {
 
     workspaceId: req.body.workspaceId,
 
-    uploadedBy: req.user?._id,
+    uploadedBy: req.user?.id,
 
     status: "completed",
   });
